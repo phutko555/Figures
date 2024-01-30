@@ -1,6 +1,6 @@
 package com.epam.rd.autotasks.figures;
 
-abstract class Figure{
+abstract class Figure {
 
     public abstract double area();
 
@@ -12,4 +12,3 @@ abstract class Figure{
 
     public abstract Point leftmostPoint();
 }
-
