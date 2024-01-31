@@ -1,6 +1,6 @@
-package com.epam.rd.autotasks.figures;
+ackage com.epam.rd.autotasks.figures;
 
-abstract class Figure {
+abstract class Figure{
 
     public abstract double area();
 
