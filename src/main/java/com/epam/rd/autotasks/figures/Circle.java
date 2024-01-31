@@ -20,13 +20,19 @@ class Circle extends Figure {
     }
 
     @Override
+    protected Point[] getVertices() {
+        return new Point[]{center};
+    }
+
+    @Override
     public String toString() {
         return String.format("Circle[%s%s]", pointsToString(), radius);
     }
 
     @Override
     public Point leftmostPoint() {
-        return center;
+        return new Point(center.getX() - radius, center.getY());
     }
 }
+
 
