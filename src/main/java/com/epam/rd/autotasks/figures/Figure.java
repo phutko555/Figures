@@ -1,14 +1,26 @@
-ackage com.epam.rd.autotasks.figures;
+package com.epam.rd.autotasks.figures;
 
-abstract class Figure{
+import java.util.Arrays;
+
+abstract class Figure {
 
     public abstract double area();
 
-    public abstract String pointsToString();
+    public abstract Point leftmostPoint();
 
-    public String toString() {
-        return this.getClass().getSimpleName() + "[" + pointsToString() + "]";
+    public String pointsToString() {
+        Point[] points = getVertices();
+        StringBuilder sb = new StringBuilder();
+        for (Point point : points) {
+            sb.append(point).append(",");
+        }
+        return sb.substring(0, sb.length() - 1);
     }
 
-    public abstract Point leftmostPoint();
+    protected abstract Point[] getVertices();
+
+    @Override
+    public String toString() {
+        return String.format("%s[%s]", getClass().getSimpleName(), pointsToString());
+    }
 }
