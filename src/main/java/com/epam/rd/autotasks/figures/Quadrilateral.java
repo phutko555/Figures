@@ -9,7 +9,8 @@ class Quadrilateral extends Figure {
 
     @Override
     public double area() {
-        // Split the quadrilateral into two triangles using diagonal AC (vertices[0] and vertices[2])
+        
+    
         Triangle triangle1 = new Triangle(vertices[0], vertices[1], vertices[2]);
         Triangle triangle2 = new Triangle(vertices[0], vertices[2], vertices[3]);
 
@@ -20,19 +21,14 @@ class Quadrilateral extends Figure {
     public String pointsToString() {
         StringBuilder sb = new StringBuilder();
         for (Point vertex : vertices) {
-            sb.append(String.format("(%s,%s)", vertex.getX(), vertex.getY()));
+            sb.append(vertex).append(",");
         }
-        return sb.toString();
+        return sb.substring(0, sb.length() - 1);
     }
 
     @Override
     protected Point[] getVertices() {
-        return new Point[0];
-    }
-
-    @Override
-    public String toString() {
-        return String.format("Quadrilateral[%s]", pointsToString());
+        return vertices;
     }
 
     @Override
@@ -46,3 +42,4 @@ class Quadrilateral extends Figure {
         return leftmost;
     }
 }
+
