@@ -1,4 +1,3 @@
-
 package com.epam.rd.autotasks.figures;
 
 class Circle extends Figure {
@@ -22,7 +21,7 @@ class Circle extends Figure {
 
     @Override
     protected Point[] getVertices() {
-        return new Point[]{center};
+        return new Point[0];
     }
 
     @Override
@@ -32,7 +31,7 @@ class Circle extends Figure {
 
     @Override
     public Point leftmostPoint() {
-        return new Point(center.getX() - radius, center.getY());
+        return center;
     }
 }
 
