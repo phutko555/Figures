@@ -1,3 +1,4 @@
+
 package com.epam.rd.autotasks.figures;
 
 class Circle extends Figure {
@@ -34,5 +35,6 @@ class Circle extends Figure {
         return new Point(center.getX() - radius, center.getY());
     }
 }
+
 
 
