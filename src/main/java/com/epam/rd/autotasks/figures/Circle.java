@@ -21,7 +21,7 @@ class Circle extends Figure {
 
     @Override
     public String toString() {
-        return String.format("%s%s", pointsToString(), radius);
+        return String.format("Circle[%s%s]", pointsToString(), radius);
     }
 
     @Override
