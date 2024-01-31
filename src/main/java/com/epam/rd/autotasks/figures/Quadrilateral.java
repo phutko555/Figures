@@ -27,7 +27,7 @@ class Quadrilateral extends Figure {
 
     @Override
     public String toString() {
-        return String.format("%s", pointsToString());
+        return String.format("Quadrilateral[%s]", pointsToString());
     }
 
     @Override
