@@ -21,7 +21,7 @@ class Circle extends Figure {
 
     @Override
     protected Point[] getVertices() {
-        return new Point[0];
+        return new Point[]{center};
     }
 
     @Override
@@ -31,6 +31,7 @@ class Circle extends Figure {
 
     @Override
     public Point leftmostPoint() {
-        return center;
+        return new Point(center.getX() - radius, center.getY());
     }
 }
+
