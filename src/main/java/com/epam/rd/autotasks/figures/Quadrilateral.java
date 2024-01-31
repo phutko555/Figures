@@ -10,7 +10,6 @@ class Quadrilateral extends Figure {
     @Override
     public double area() {
         
-    
         Triangle triangle1 = new Triangle(vertices[0], vertices[1], vertices[2]);
         Triangle triangle2 = new Triangle(vertices[0], vertices[2], vertices[3]);
 
@@ -21,14 +20,14 @@ class Quadrilateral extends Figure {
     public String pointsToString() {
         StringBuilder sb = new StringBuilder();
         for (Point vertex : vertices) {
-            sb.append(vertex).append(",");
+            sb.append(String.format("(%s,%s)", vertex.getX(), vertex.getY()));
         }
-        return sb.substring(0, sb.length() - 1);
+        return sb.toString();
     }
 
     @Override
-    protected Point[] getVertices() {
-        return vertices;
+    public String toString() {
+        return String.format("%s", pointsToString());
     }
 
     @Override
@@ -42,4 +41,5 @@ class Quadrilateral extends Figure {
         return leftmost;
     }
 }
+
 
