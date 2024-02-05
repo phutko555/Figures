@@ -1,5 +1,3 @@
-package com.epam.rd.autotasks.figures;
-
 class Circle extends Figure {
     private Point center;
     private double radius;
@@ -11,29 +9,20 @@ class Circle extends Figure {
 
     @Override
     public double area() {
-        return Math.PI * radius * radius;
+  
+        return Math.PI * Math.pow(radius, 2);
     }
 
     @Override
     public String pointsToString() {
+        
         return String.format("(%s,%s)", center.getX(), center.getY());
     }
 
     @Override
-    protected Point[] getVertices() {
-        return new Point[0];
-    }
-
-    @Override
-    public String toString() {
-        return String.format("Circle[%s%s]", pointsToString(), radius);
-    }
-
-    @Override
     public Point leftmostPoint() {
+        
         return center;
     }
 }
-
-
 
