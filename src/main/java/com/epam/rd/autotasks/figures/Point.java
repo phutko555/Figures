@@ -1,13 +1,22 @@
-package com.epam.rd.autotasks.figures;
+class Point {
+    private double x;
+    private double y;
 
-abstract class Figure {
-    public abstract double area();
-
-    public abstract String pointsToString();
-
-    public String toString() {
-        return this.getClass().getSimpleName() + "[" + pointsToString() + "]";
+    public Point(final double x, final double y) {
+        this.x = x;
+        this.y = y;
     }
 
-    public abstract Point leftmostPoint();
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("(%s,%s)", x, y);
+    }
 }
