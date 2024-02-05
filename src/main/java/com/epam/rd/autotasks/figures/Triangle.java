@@ -1,5 +1,7 @@
 package com.epam.rd.autotasks.figures;
 
+import java.util.Arrays;
+
 class Triangle extends Figure {
     private Point[] vertices;
 
@@ -9,18 +11,18 @@ class Triangle extends Figure {
 
     @Override
     public double area() {
-        double x1 = vertices[0].getX();
-        double y1 = vertices[0].getY();
-        double x2 = vertices[1].getX();
-        double y2 = vertices[1].getY();
-        double x3 = vertices[2].getX();
-        double y3 = vertices[2].getY();
-
-        return 0.5 * Math.abs(x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2));
+        // Calculate the area of the triangle using the vertices
+        double area = 0.5 * Math.abs(
+                vertices[0].getX() * (vertices[1].getY() - vertices[2].getY()) +
+                vertices[1].getX() * (vertices[2].getY() - vertices[0].getY()) +
+                vertices[2].getX() * (vertices[0].getY() - vertices[1].getY())
+        );
+        return area;
     }
 
     @Override
     public String pointsToString() {
+        // Format vertices as (a.x,a.y)(b.x,b.y)(c.x,c.y)
         StringBuilder sb = new StringBuilder();
         for (Point vertex : vertices) {
             sb.append(String.format("(%s,%s)", vertex.getX(), vertex.getY()));
@@ -29,23 +31,10 @@ class Triangle extends Figure {
     }
 
     @Override
-    protected Point[] getVertices() {
-        return new Point[0];
-    }
-
-    @Override
-    public String toString() {
-        return String.format("Triangle[%s]", pointsToString());
-    }
-
-    @Override
     public Point leftmostPoint() {
-        Point leftmost = vertices[0];
-        for (Point vertex : vertices) {
-            if (vertex.getX() < leftmost.getX()) {
-                leftmost = vertex;
-            }
-        }
-        return leftmost;
+        // Find the leftmost point among vertices
+        return Arrays.stream(vertices)
+                .min((p1, p2) -> Double.compare(p1.getX(), p2.getX()))
+                .orElse(null);
     }
 }
