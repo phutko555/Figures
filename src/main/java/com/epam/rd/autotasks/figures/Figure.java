@@ -5,6 +5,7 @@ abstract class Figure {
 
     public abstract String pointsToString();
 
+    @Override
     public String toString() {
         return this.getClass().getSimpleName() + "[" + pointsToString() + "]";
     }
