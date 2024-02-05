@@ -1,3 +1,5 @@
+package com.epam.rd.autotasks.figures;
+
 class Point {
     private double x;
     private double y;
