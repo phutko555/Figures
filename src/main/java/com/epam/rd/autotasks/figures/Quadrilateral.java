@@ -1,3 +1,7 @@
+package com.epam.rd.autotasks.figures;
+
+import java.util.Arrays;
+
 class Quadrilateral extends Figure {
     private Point[] vertices;
 
@@ -7,7 +11,7 @@ class Quadrilateral extends Figure {
 
     @Override
     public double area() {
-        
+
         Triangle triangle1 = new Triangle(vertices[0], vertices[1], vertices[3]);
         Triangle triangle2 = new Triangle(vertices[1], vertices[2], vertices[3]);
         return triangle1.area() + triangle2.area();
@@ -15,7 +19,7 @@ class Quadrilateral extends Figure {
 
     @Override
     public String pointsToString() {
-      
+    
         StringBuilder sb = new StringBuilder();
         for (Point vertex : vertices) {
             sb.append(String.format("(%s,%s)", vertex.getX(), vertex.getY()));
@@ -25,6 +29,7 @@ class Quadrilateral extends Figure {
 
     @Override
     public Point leftmostPoint() {
+        
     
         return Arrays.stream(vertices)
                 .min((p1, p2) -> Double.compare(p1.getX(), p2.getX()))
